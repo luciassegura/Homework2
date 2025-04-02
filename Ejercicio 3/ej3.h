@@ -10,7 +10,7 @@ using namespace std;
 template <typename T>
 class Numero {
 public:
-    virtual T suma(T a, T b) = 0;
+    virtual T suma(T a, T b) = 0;       // en cada instancia de T se reemplaza por el argumento del tipo corresponidiente
     virtual T resta(T a, T b) = 0;
     virtual T multiplicacion(T a, T b) = 0;
 

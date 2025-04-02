@@ -33,7 +33,7 @@ double Real::multiplicacion(double a, double b) {
 }
 
 string Real::toString(double num) const {
-    ostringstream oss;
+    ostringstream oss;                          // permite concatenar varios valores y darles formatp string
     oss << fixed << setprecision(2) << num;
 
     string result = oss.str();
