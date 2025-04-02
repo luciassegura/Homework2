@@ -14,7 +14,7 @@ Ejercicio 2
 
 cd "Ejercicio 2"
 
-g++ -std=c++14 ej2.cpp main2.cpp -o ej2 
+g++ -std=c++14 -Wall -Wextra -o ej2 ej2.cpp main2.cpp
 
 ./ej2
 
