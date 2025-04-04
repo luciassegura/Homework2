@@ -8,7 +8,7 @@ using namespace std;
 vector<unique_ptr<Estudiante>> lista_estudiantes;
 
 Estudiante::Estudiante(string nombre, int legajo){      
-    this -> nombre = nombre;
+    this -> nombre = std::move(nombre);
     this -> legajo = legajo;
 }
 
@@ -59,9 +59,7 @@ Curso::~Curso() {
 }
 
 Curso::Curso(const Curso& otro) {
-    for (Estudiante* estudiante : otro.estudiantes) {
-        estudiantes.push_back(estudiante);  // copia los punteros sin duplicar memoria
-    }
+    estudiantes = otro.estudiantes;  // copia los punteros, no los objetos
 }
 
 // Para copiar el objeto curso uso shallow copy que solo copia los punteros, no los objetos.
@@ -178,7 +176,7 @@ int menu(Curso &curso){
             
             Estudiante* estudiante = curso.buscarEstudiante(legajo);
             if (estudiante) {
-                cout << "\nEl/la estudiante es: " << estudiante->obtenerNombre() << endl;
+                cout << "\nEl/la estudiante es: " << estudiante -> obtenerNombre() << endl;
             } else {
                 cout << "\nEstudiante no encontrado." << endl;
             }

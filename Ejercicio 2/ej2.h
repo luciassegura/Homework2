@@ -28,6 +28,10 @@ public:
     friend ostream& operator<<(ostream& os, const Estudiante& est);
 };
 
+extern vector<unique_ptr<Estudiante>> lista_estudiantes;
+
+Estudiante* buscarEstudianteGlobal(int legajo);
+
 class Curso {
 private:
     vector<Estudiante*> estudiantes;
